@@ -1,108 +1,583 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vocalis – Kullanım Sözleşmesi (EULA)</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 24px 16px 48px;
-      color: #1a1a2e;
-      line-height: 1.7;
-    }
-    h1 { font-size: 1.6rem; margin-bottom: 4px; }
-    h2 { font-size: 1.1rem; margin-top: 2rem; color: #2d3a6b; }
-    p, li { font-size: 0.95rem; }
-    ul { padding-left: 1.4rem; }
-    .date { color: #666; font-size: 0.85rem; margin-bottom: 2rem; }
-    a { color: #3b5bdb; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocalis - Kullanım Şartları / Terms of Service</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fafafa;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin: 2rem 0 0.5rem;
+            color: #16213e;
+            border-bottom: 2px solid #e8e8e8;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.3rem;
+            color: #0f3460;
+        }
+
+        p, li {
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        a {
+            color: #3b5bdb;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .lang-switch a {
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+            font-weight: 500;
+        }
+
+        .lang-switch a.active {
+            background: #1a1a2e;
+            color: #fff;
+            border-color: #1a1a2e;
+        }
+
+        .section {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #e8e8e8;
+        }
+
+        .contact {
+            background: #f0f4ff;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .notice {
+            background: #fff8e6;
+            border: 1px solid #ffe0a3;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        #en {
+            display: none;
+        }
+    </style>
+
+    <script>
+        function switchLang(lang) {
+            document.getElementById('tr').style.display = lang === 'tr' ? 'block' : 'none';
+            document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
+
+            document.querySelectorAll('.lang-switch a').forEach(a => {
+                a.classList.remove('active');
+            });
+
+            document.querySelector('.lang-switch a[data-lang="' + lang + '"]').classList.add('active');
+
+            document.documentElement.lang = lang;
+        }
+    </script>
 </head>
+
 <body>
+<div class="container">
 
-<h1>Vocalis — Son Kullanıcı Lisans Sözleşmesi (EULA)</h1>
-<p class="date">Son güncelleme: 5 Mayıs 2025</p>
+    <h1>Vocalis</h1>
 
-<p>
-  Bu Son Kullanıcı Lisans Sözleşmesi ("Sözleşme"), Vocalis mobil uygulamasını ("Uygulama")
-  indirerek veya kullanarak oluşturulmuş bir bağlayıcı hukuki sözleşmedir.
-  Lütfen dikkatle okuyun.
-</p>
+    <div class="lang-switch">
+        <a href="#" class="active" data-lang="tr" onclick="switchLang('tr'); return false;">Türkçe</a>
+        <a href="#" data-lang="en" onclick="switchLang('en'); return false;">English</a>
+    </div>
 
-<h2>1. Lisans Kapsamı</h2>
-<p>
-  Geliştirici, size Uygulamayı kişisel, ticari olmayan ve münhasıran kendi cihazınızda
-  kullanmanız için sınırlı, devredilemez, münhasır olmayan bir lisans vermektedir.
-  Bu lisans; Uygulamayı kopyalama, değiştirme, dağıtma, satma, kiraya verme veya
-  tersine mühendislik yapma haklarını kapsamaz.
-</p>
+    <!-- ═══════════════════════ TÜRKÇE ═══════════════════════ -->
+    <div id="tr">
 
-<h2>2. Kullanım Kısıtlamaları</h2>
-<ul>
-  <li>Uygulamayı yalnızca yasal amaçlarla kullanabilirsiniz.</li>
-  <li>Başka kullanıcıların Uygulamayı kullanımını engelleyemez veya bozamazsınız.</li>
-  <li>Uygulamayı herhangi bir şekilde ticari amaçla kullanamazsınız.</li>
-  <li>Uygulamanın kaynak kodunu elde etmeye ya da türev eserler oluşturmaya
-      çalışamazsınız.</li>
-</ul>
+        <p class="date">Son güncelleme: Mayıs 2026</p>
 
-<h2>3. Fikri Mülkiyet</h2>
-<p>
-  Uygulama ve içindeki tüm içerik (metin, görsel, ses, yazılım dahil) geliştiriciye
-  veya lisans verenlerine aittir. Bu Sözleşme size içerik üzerinde herhangi bir
-  mülkiyet hakkı tanımaz.
-</p>
+        <div class="notice">
+            <p>
+                Bu Kullanım Şartları ve Son Kullanıcı Lisans Sözleşmesi ("Sözleşme"),
+                Vocalis mobil uygulamasını indirmeniz, kurmanız veya kullanmanız halinde
+                sizinle geliştirici arasında geçerli olur. Uygulamayı kullanarak bu
+                Sözleşmeyi kabul etmiş sayılırsınız.
+            </p>
+        </div>
 
-<h2>4. Reklam ve Uygulama İçi Satın Almalar</h2>
-<p>
-  Uygulama üçüncü taraf reklam ağları (Google AdMob) aracılığıyla reklam
-  gösterebilir. Reklam tercihinizi uygulama içindeki rıza ekranından
-  yönetebilirsiniz. Uygulama içi satın almalar iade edilmez; satın alma öncesinde
-  ilgili platform (Google Play / App Store) koşullarını incelemenizi tavsiye ederiz.
-</p>
+        <div class="section">
+            <h2>1. Genel Bilgiler</h2>
+            <p>
+                Vocalis ("Uygulama"), kelime tabanlı bir mobil oyundur. Bu Sözleşme,
+                Uygulamayı hangi koşullarda kullanabileceğinizi, lisans haklarınızı,
+                kullanım kısıtlamalarını, reklamları, uygulama içi satın almaları ve
+                sorumluluk sınırlarını açıklar.
+            </p>
+            <p>
+                Bu Sözleşmeyi kabul etmiyorsanız Uygulamayı kullanmamalı ve cihazınızdan
+                silmelisiniz.
+            </p>
+        </div>
 
-<h2>5. Veri ve Gizlilik</h2>
-<p>
-  Kişisel verilerinizin nasıl toplandığı ve işlendiğine ilişkin bilgi için
-  <a href="https://nurullahgurcan.github.io/vocalis-privacy/index.html">Gizlilik Politikası</a>
-  sayfamızı ziyaret edin.
-</p>
+        <div class="section">
+            <h2>2. Lisans Kapsamı</h2>
+            <p>
+                Geliştirici, size Uygulamayı yalnızca kişisel, ticari olmayan amaçlarla
+                kullanmanız için sınırlı, münhasır olmayan, devredilemez ve geri alınabilir
+                bir lisans verir.
+            </p>
+            <p>
+                Bu lisans size Uygulama üzerinde herhangi bir mülkiyet hakkı vermez.
+                Uygulama size satılmaz; yalnızca kullanım hakkı lisanslanır.
+            </p>
+        </div>
 
-<h2>6. Sorumluluk Sınırlaması</h2>
-<p>
-  Uygulama "olduğu gibi" ve "mevcut haliyle" sunulmaktadır. Geliştirici,
-  yasaların izin verdiği azami ölçüde, Uygulamanın kullanımından doğan
-  dolaylı, arızi, özel veya sonuç niteliğindeki zararlardan sorumlu değildir.
-</p>
+        <div class="section">
+            <h2>3. Kullanım Kısıtlamaları</h2>
+            <p>Uygulamayı kullanırken aşağıdakileri yapamazsınız:</p>
+            <ul>
+                <li>Uygulamayı yasa dışı, zararlı veya kötüye kullanım amaçlı kullanmak,</li>
+                <li>Uygulamayı kopyalamak, değiştirmek, dağıtmak, satmak, kiralamak veya alt lisanslamak,</li>
+                <li>Uygulamanın kaynak kodunu elde etmeye çalışmak, tersine mühendislik yapmak veya türev eser oluşturmak,</li>
+                <li>Hile, bot, otomasyon, açık istismarı veya oyunun dengesini bozacak araçlar kullanmak,</li>
+                <li>Diğer oyuncuları taciz etmek, yanıltmak, tehdit etmek veya rahatsız etmek,</li>
+                <li>Uygulamanın sunucularına, reklam sistemlerine veya çok oyunculu altyapısına zarar vermeye çalışmak.</li>
+            </ul>
+        </div>
 
-<h2>7. Değişiklikler</h2>
-<p>
-  Bu Sözleşme zaman zaman güncellenebilir. Önemli değişikliklerde Uygulama,
-  tekrar onayınızı isteyecektir. Değişikliklerden haberdar olmak için bu sayfayı
-  düzenli olarak kontrol etmenizi öneririz.
-</p>
+        <div class="section">
+            <h2>4. Oyuncu Adı ve Çok Oyunculu Kullanım</h2>
+            <p>
+                Uygulama, çok oyunculu modlarda oyuncu adı veya takma ad kullanmanıza izin
+                verebilir. Oyuncu adınızın uygunsuz, yanıltıcı, hakaret içeren, ayrımcı,
+                müstehcen veya üçüncü kişilerin haklarını ihlal eden ifadeler içermemesi gerekir.
+            </p>
+            <p>
+                Geliştirici, gerekli gördüğü durumlarda uygunsuz oyuncu adlarını, oyun
+                oturumlarını veya erişimi kısıtlama hakkını saklı tutar.
+            </p>
+        </div>
 
-<h2>8. Fesih</h2>
-<p>
-  Bu Sözleşmeyi istediğiniz zaman Uygulamayı cihazınızdan silerek
-  sona erdirebilirsiniz. Geliştirici, Sözleşmenin ihlali halinde lisansınızı
-  önceden bildirimde bulunmaksızın iptal etme hakkını saklı tutar.
-</p>
+        <div class="section">
+            <h2>5. Reklamlar</h2>
+            <p>
+                Uygulama, ücretsiz olarak sunulabilmesi için üçüncü taraf reklam ağları
+                aracılığıyla reklam gösterebilir. Reklamlar kişiselleştirilmiş veya genel
+                reklamlar olabilir.
+            </p>
+            <p>
+                Reklam tercihinizi Uygulama içindeki rıza ekranından yönetebilirsiniz.
+                Reklamlar ve reklam ortakları hakkında daha fazla bilgi için Gizlilik
+                Politikamızı inceleyebilirsiniz.
+            </p>
+        </div>
 
-<h2>9. Uygulanacak Hukuk</h2>
-<p>
-  Bu Sözleşme, Türkiye Cumhuriyeti hukukuna tabidir. Uyuşmazlıklar
-  İstanbul mahkemelerinde çözülecektir.
-</p>
+        <div class="section">
+            <h2>6. Uygulama İçi Satın Almalar</h2>
+            <p>
+                Uygulama, oyun içi para birimi, ödül, özellik veya benzeri dijital içerikler
+                için uygulama içi satın alma seçenekleri sunabilir.
+            </p>
+            <p>
+                Satın alma işlemleri Google Play veya Apple App Store tarafından işlenir.
+                Ödeme, faturalandırma, iptal ve iade süreçleri ilgili platformun kurallarına
+                tabidir.
+            </p>
+            <p>
+                Dijital içerikler gerçek para veya gerçek dünya değeri taşımaz. Oyun içi
+                para birimleri veya sanal öğeler yalnızca Uygulama içinde kullanılabilir.
+            </p>
+        </div>
 
-<h2>10. İletişim</h2>
-<p>
-  Herhangi bir sorunuz için:
-  <a href="mailto:nurullahgrcn@gmail.com">nurullahgrcn@gmail.com</a>
-</p>
+        <div class="section">
+            <h2>7. Fikri Mülkiyet</h2>
+            <p>
+                Uygulama ve Uygulama içindeki tüm yazılım, tasarım, arayüz, metin, grafik,
+                logo, ses, müzik, oyun mekaniği ve diğer içerikler geliştiriciye veya
+                lisans verenlerine aittir.
+            </p>
+            <p>
+                Bu Sözleşme, size Uygulama veya içerikleri üzerinde herhangi bir telif hakkı,
+                marka hakkı veya başka bir fikri mülkiyet hakkı devretmez.
+            </p>
+        </div>
 
+        <div class="section">
+            <h2>8. Gizlilik ve Kişisel Veriler</h2>
+            <p>
+                Kişisel verilerin nasıl toplandığı, kullanıldığı, saklandığı ve korunduğu
+                hakkında bilgi almak için Gizlilik Politikamızı inceleyin:
+            </p>
+            <p>
+                <a href="https://nurullahgurcan.github.io/vocalis-privacy/index.html" target="_blank" rel="noopener">
+                    Gizlilik Politikası
+                </a>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>9. Üçüncü Taraf Hizmetler</h2>
+            <p>
+                Uygulama; reklam gösterimi, çok oyunculu oyun altyapısı, analiz veya hata
+                raporlama gibi amaçlarla üçüncü taraf hizmetlerden yararlanabilir.
+            </p>
+            <p>
+                Bu üçüncü taraf hizmetlerin kullanımı, ilgili sağlayıcıların kendi kullanım
+                şartları ve gizlilik politikalarına tabi olabilir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>10. Güncellemeler ve Değişiklikler</h2>
+            <p>
+                Geliştirici, Uygulamayı zaman zaman güncelleyebilir, değiştirebilir, yeni
+                özellikler ekleyebilir veya mevcut özellikleri kaldırabilir.
+            </p>
+            <p>
+                Bu Sözleşme de zaman zaman güncellenebilir. Önemli değişikliklerde Uygulama
+                içinde yeniden onayınız istenebilir veya uygun bir bildirim gösterilebilir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>11. Garanti Reddi</h2>
+            <p>
+                Uygulama "olduğu gibi" ve "mevcut haliyle" sunulur. Geliştirici, Uygulamanın
+                kesintisiz, hatasız, güvenli veya her zaman kullanılabilir olacağını garanti etmez.
+            </p>
+            <p>
+                Uygulamayı kullanmanızdan doğabilecek riskler, yasaların izin verdiği ölçüde
+                size aittir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>12. Sorumluluk Sınırlaması</h2>
+            <p>
+                Geliştirici, yasaların izin verdiği azami ölçüde, Uygulamanın kullanımından
+                veya kullanılamamasından doğan dolaylı, arızi, özel, cezai veya sonuç
+                niteliğindeki zararlardan sorumlu değildir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>13. Askıya Alma ve Fesih</h2>
+            <p>
+                Bu Sözleşmeyi istediğiniz zaman Uygulamayı cihazınızdan silerek sona
+                erdirebilirsiniz.
+            </p>
+            <p>
+                Geliştirici, bu Sözleşmeyi ihlal etmeniz, hile yapmanız, diğer kullanıcılara
+                zarar vermeniz veya Uygulamayı kötüye kullanmanız halinde erişiminizi askıya
+                alma veya sonlandırma hakkını saklı tutar.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>14. Apple App Store İçin Ek Hükümler</h2>
+            <p>
+                Uygulamayı Apple App Store üzerinden indirmeniz halinde, bu Sözleşmenin
+                sizinle geliştirici arasında olduğunu; Apple'ın Uygulamanın içeriğinden,
+                bakımından, destek hizmetlerinden veya bu Sözleşme kapsamındaki taleplerden
+                sorumlu olmadığını kabul edersiniz.
+            </p>
+            <p>
+                Apple ve bağlı kuruluşları, bu Sözleşmenin üçüncü taraf lehtarlarıdır ve
+                gerekli durumlarda bu Sözleşmeyi size karşı uygulama hakkına sahip olabilir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>15. Google Play İçin Ek Hükümler</h2>
+            <p>
+                Uygulamayı Google Play üzerinden indirmeniz halinde, kullanımınız Google Play
+                şartları ve ilgili Google Play politikalarına da tabi olabilir. Uygulama içi
+                satın almalar Google Play faturalandırma sistemi üzerinden işlenebilir.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>16. Uygulanacak Hukuk</h2>
+            <p>
+                Bu Sözleşme, kanunlar ihtilafı kuralları hariç olmak üzere Türkiye Cumhuriyeti
+                hukukuna tabidir. Zorunlu tüketici haklarınız saklıdır.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>17. İletişim</h2>
+            <div class="contact">
+                <p><strong>E-posta:</strong> <a href="mailto:nurullahgrcn@gmail.com">nurullahgrcn@gmail.com</a></p>
+                <p><strong>Geliştirici:</strong> [BURAYA_ISIM_VEYA_FIRMA_ADINI_YAZ]</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ═══════════════════════ ENGLISH ═══════════════════════ -->
+    <div id="en">
+
+        <p class="date">Last updated: May 2026</p>
+
+        <div class="notice">
+            <p>
+                These Terms of Service and End User License Agreement ("Agreement") apply
+                between you and the developer when you download, install, or use the
+                Vocalis mobile application. By using the App, you agree to this Agreement.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>1. Overview</h2>
+            <p>
+                Vocalis ("App") is a word-based mobile game. This Agreement explains the
+                conditions under which you may use the App, your license rights, usage
+                restrictions, advertising, in-app purchases, and limitations of liability.
+            </p>
+            <p>
+                If you do not agree to this Agreement, you should not use the App and should
+                delete it from your device.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>2. Scope of License</h2>
+            <p>
+                The developer grants you a limited, non-exclusive, non-transferable, revocable
+                license to use the App for personal, non-commercial purposes only.
+            </p>
+            <p>
+                This license does not transfer ownership of the App to you. The App is licensed,
+                not sold.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>3. Usage Restrictions</h2>
+            <p>You may not:</p>
+            <ul>
+                <li>Use the App for unlawful, harmful, or abusive purposes,</li>
+                <li>Copy, modify, distribute, sell, rent, lease, or sublicense the App,</li>
+                <li>Attempt to access the source code, reverse engineer the App, or create derivative works,</li>
+                <li>Use cheats, bots, automation, exploits, or tools that disrupt game balance,</li>
+                <li>Harass, mislead, threaten, or disturb other players,</li>
+                <li>Attempt to damage the App's servers, advertising systems, or multiplayer infrastructure.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Player Name and Multiplayer Use</h2>
+            <p>
+                The App may allow you to use a player name or nickname in multiplayer modes.
+                Your player name must not contain inappropriate, misleading, offensive,
+                discriminatory, obscene, or rights-infringing content.
+            </p>
+            <p>
+                The developer reserves the right to restrict inappropriate player names, game
+                sessions, or access where necessary.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>5. Advertising</h2>
+            <p>
+                The App may display advertisements through third-party advertising networks
+                in order to keep the App available for free. Ads may be personalized or
+                non-personalized.
+            </p>
+            <p>
+                You may manage your advertising preference through the consent screen inside
+                the App. For more information about ads and advertising partners, please
+                review our Privacy Policy.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>6. In-App Purchases</h2>
+            <p>
+                The App may offer in-app purchases for in-game currency, rewards, features,
+                or similar digital content.
+            </p>
+            <p>
+                Purchases are processed by Google Play or Apple App Store. Payment, billing,
+                cancellation, and refund processes are subject to the rules of the relevant
+                platform.
+            </p>
+            <p>
+                Digital content has no real-world monetary value. In-game currency or virtual
+                items may only be used within the App.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>7. Intellectual Property</h2>
+            <p>
+                The App and all software, design, interface, text, graphics, logos, sounds,
+                music, game mechanics, and other content included in the App are owned by
+                the developer or its licensors.
+            </p>
+            <p>
+                This Agreement does not transfer any copyright, trademark, or other
+                intellectual property rights to you.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>8. Privacy and Personal Data</h2>
+            <p>
+                Please review our Privacy Policy to understand how personal data is collected,
+                used, stored, and protected:
+            </p>
+            <p>
+                <a href="https://nurullahgurcan.github.io/vocalis-privacy/index.html" target="_blank" rel="noopener">
+                    Privacy Policy
+                </a>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>9. Third-Party Services</h2>
+            <p>
+                The App may use third-party services for advertising, multiplayer infrastructure,
+                analytics, crash reporting, or similar purposes.
+            </p>
+            <p>
+                Your use of such third-party services may also be subject to their own terms
+                and privacy policies.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>10. Updates and Changes</h2>
+            <p>
+                The developer may update, modify, add, or remove features from the App from
+                time to time.
+            </p>
+            <p>
+                This Agreement may also be updated from time to time. For significant changes,
+                the App may ask for your consent again or display an appropriate notice.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>11. Disclaimer of Warranty</h2>
+            <p>
+                The App is provided "as is" and "as available". The developer does not warrant
+                that the App will be uninterrupted, error-free, secure, or always available.
+            </p>
+            <p>
+                To the maximum extent permitted by law, your use of the App is at your own risk.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>12. Limitation of Liability</h2>
+            <p>
+                To the maximum extent permitted by law, the developer shall not be liable for
+                indirect, incidental, special, punitive, or consequential damages arising from
+                the use of, or inability to use, the App.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>13. Suspension and Termination</h2>
+            <p>
+                You may terminate this Agreement at any time by deleting the App from your device.
+            </p>
+            <p>
+                The developer reserves the right to suspend or terminate your access if you
+                violate this Agreement, cheat, harm other users, or misuse the App.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>14. Additional Terms for Apple App Store</h2>
+            <p>
+                If you downloaded the App from the Apple App Store, you acknowledge that this
+                Agreement is between you and the developer, not Apple. Apple is not responsible
+                for the App, its content, maintenance, support, or any claims under this Agreement.
+            </p>
+            <p>
+                Apple and its subsidiaries are third-party beneficiaries of this Agreement and
+                may enforce this Agreement against you where applicable.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>15. Additional Terms for Google Play</h2>
+            <p>
+                If you downloaded the App from Google Play, your use may also be subject to
+                Google Play terms and applicable Google Play policies. In-app purchases may be
+                processed through Google Play billing.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>16. Governing Law</h2>
+            <p>
+                This Agreement is governed by the laws of the Republic of Türkiye, excluding
+                conflict of law rules. Your mandatory consumer rights remain unaffected.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>17. Contact</h2>
+            <div class="contact">
+                <p><strong>Email:</strong> <a href="mailto:nurullahgrcn@gmail.com">nurullahgrcn@gmail.com</a></p>
+                <p><strong>Developer:</strong> [YOUR_NAME_OR_COMPANY_HERE]</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
